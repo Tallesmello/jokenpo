@@ -1,0 +1,84 @@
+                    Engenharia do projeto em 4 etapas
+
+-----------------------------------------------------------------------------------------------------------------------
+    Entrada = Controller (segunda etapa)
+    Modelo = Model ou Request(entrada) / Response(saida)
+    Serviço = Service (chamada de algo)
+    Caso de uso = UseCase (logica)
+
+-----------------------------------------------------------------------------------------------------------------------
+
+                    Regras do projeto
+
+    Entrada = só pode chamar um serviço por interface
+
+    Serviço só pode chamar um caso de uso por interface
+
+    Só modelos podem ser trafegados entre as camadas
+
+    para auxilio do projeto podemos ter classes utilitarias
+
+-----------------------------------------------------------------------------------------------------------------------
+
+                    Regra de Negocio
+
+    tenho dois jogadores que jogam jokenpo(Pedra, Papel, Terousa, Lagarto e Spock)
+
+    tesoura -> Lagarto e papel
+    lagarto -> spock e papel
+    spoke -> pedra e tesoura
+    papel -> pedra e spock
+    pedra -> lagarto e tesoura
+
+    Os jogadores escolhem aleatoriamente e no final o sistyma mostra ganhador
+    jogam se 5 rodadas. rodada de empate devem ser repetidas porem se alguem ganhar 3 o jogo acaba.
+
+    deve ser mostrado o log de cada jogada ate o final do jogo e o resultado.(um array ++)
+
+    tudo deve ser automatico.
+
+-----------------------------------------------------------------------------------------------------------------------
+
+                    Modelo
+
+    onde ficam os dados brutos (String float list arraylist etc..)
+
+-----------------------------------------------------------------------------------------------------------------------
+
+                    Serviço
+
+    deve conter o minimo de regras somente chamadas de metodos
+
+-----------------------------------------------------------------------------------------------------------------------
+
+                    UseCase
+
+    contem a logica(quem ganha, quem perde )
+    fazer logs
+
+-----------------------------------------------------------------------------------------------------------------------
+
+ ArrayList<String> lista = new ArrayList<>();
+             lista.add("talles");
+             lista.add("aaa");
+             lista.add("ta");
+
+        // List<Integer> resultado = new ArrayList<>();
+        // List<Integer> numeros = Arrays.asList(5, 2, 8, 1, 4);
+
+-----------------------------------------------------------------------------------------------------------------------
+
+         List<Integer> resultado = numeros.stream()
+                 .filter(n -> n % 2 == 0)    // Filtra os pares
+                 .map(n -> n * 10)           // Transforma (mapeia)
+                 .sorted()                   // Ordena
+                 .toList();                  // Transforma o stream de volta em lista
+-----------------------------------------------------------------------------------------------------------------------
+
+ foreach
+
+         for (String conteudo : lista){
+
+             System.out.println(conteudo);
+
+         }
