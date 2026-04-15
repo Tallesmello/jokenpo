@@ -2,18 +2,18 @@ import java.util.ArrayList;
 
 public class ListaDeJogadas {
 
-    private ArrayList<String> list;
+    private ArrayList<Jogadas> list;
 
     public ListaDeJogadas(){
         list = new ArrayList<>();
-        list.add("Pedra");
-        list.add("Papel");
-        list.add("Tesoura");
-        list.add("Lagarto");
-        list.add("Spock");
+        list.add(Jogadas.PEDRA);
+        list.add(Jogadas.PAPEL);
+        list.add(Jogadas.TESOURA);
+        list.add(Jogadas.LAGARTO);
+        list.add(Jogadas.SPOCK);
     }
 
-    public ArrayList<String> getList() {
+    public ArrayList<Jogadas> getList() {
         return list;
     }
 }

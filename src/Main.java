@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.Random;
-
 public class Main {
     public static void main(String[] args) {
 
@@ -9,7 +6,13 @@ public class Main {
 
         RodadasDoJogo resultado = partida.executar();
 
-        System.out.println(resultado.getHistorico());
-        System.out.println("Vencedor " + resultado.getVencedor());
+        //System.out.println(resultado.getHistorico());
+
+        for (String log : resultado.getHistorico()){
+            System.out.println(log);
+        }
+
+        System.out.println("\nO vencedor é: " + resultado.getVencedor());
+
     }
 }

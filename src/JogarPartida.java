@@ -3,13 +3,12 @@ import java.util.Random;
 
 public class JogarPartida {
 
-    private List<String> acoes;
-    private Random random;
+    private List<Jogadas> acoes;
+    private Random random = new Random();
     private MecanicaDoJogo mecanica;
 
-    public JogarPartida(List<String> acoes) {
+    public JogarPartida(List<Jogadas> acoes) {
         this.acoes = acoes;
-        this.random = new Random();
         this.mecanica = new MecanicaDoJogo();
     }
 
@@ -23,25 +22,35 @@ public class JogarPartida {
 
         while (pontosJogador < 3 && pontosMaquina < 3) {
 
-            String jogador = acoes.get(random.nextInt(acoes.size()));
-            String maquina = acoes.get(random.nextInt(acoes.size()));
+            Jogadas jogador = acoes.get(random.nextInt(acoes.size()));
+            Jogadas maquina = acoes.get(random.nextInt(acoes.size()));
 
-            String resultadoDaRodada = mecanica.vencedor(jogador, maquina);
+            int resultadoDaRodada = mecanica.vencedor(jogador, maquina);
 
-            if (resultadoDaRodada.equals("Jogador venceu a RODADA")) {
+            String resultadoEmTexto;
+
+            if (resultadoDaRodada == 0) {
+                resultadoEmTexto = "Empatou";
+            } else if (resultadoDaRodada == 1) {
+                resultadoEmTexto = "Jogador Venceu";
+            }else {
+                resultadoEmTexto = "Maquina venceu";
+            }
+
+            if (resultadoDaRodada == 1){
                 pontosJogador++;
-            } else if (resultadoDaRodada.equals("Maquina venceu a RODADA")) {
+            } else if (resultadoDaRodada == 2) {
                 pontosMaquina++;
             }
 
             String log = "\nRodada " + rodada +
                     "\n | Jogador: " + jogador +
                     "\n | Máquina: " + maquina +
-                    "\n | Resultado: " + resultadoDaRodada;
+                    "\n | Resultado: " + resultadoEmTexto;
 
             resultado.adicionaLog(log);
 
-            if (!resultadoDaRodada.equals("Empatou")) {
+            if (resultadoDaRodada != 0) {
                 rodada++;
             }
         }

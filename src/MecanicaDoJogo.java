@@ -1,20 +1,20 @@
 public class MecanicaDoJogo {
 
-    public String vencedor(String jogador, String maquina) {
+    public int vencedor(Jogadas jogador, Jogadas maquina) {
 
         if (jogador.equals(maquina)) {
-            return "Empatou";
+            return 0; //"Empatou"
         }
 
         if (
-                (jogador.equals("Pedra") && (maquina.equals("Tesoura") || maquina.equals("Lagarto"))) ||
-                        (jogador.equals("Papel") && (maquina.equals("Pedra") || maquina.equals("Spock"))) ||
-                        (jogador.equals("Tesoura") && (maquina.equals("Papel") || maquina.equals("Lagarto"))) ||
-                        (jogador.equals("Lagarto") && (maquina.equals("Papel") || maquina.equals("Spock"))) ||
-                        (jogador.equals("Spock") && (maquina.equals("Pedra") || maquina.equals("Tesoura")))
+                (jogador.equals(Jogadas.PEDRA) && (maquina.equals(Jogadas.TESOURA) || maquina.equals(Jogadas.LAGARTO))) ||
+                        (jogador.equals(Jogadas.PAPEL) && (maquina.equals(Jogadas.PEDRA) || maquina.equals(Jogadas.SPOCK))) ||
+                        (jogador.equals(Jogadas.TESOURA) && (maquina.equals(Jogadas.PAPEL) || maquina.equals(Jogadas.LAGARTO))) ||
+                        (jogador.equals(Jogadas.LAGARTO) && (maquina.equals(Jogadas.PAPEL) || maquina.equals(Jogadas.SPOCK))) ||
+                        (jogador.equals(Jogadas.SPOCK) && (maquina.equals(Jogadas.PEDRA) || maquina.equals(Jogadas.TESOURA)))
         ) {
-            return "Jogador venceu a RODADA";
+            return 1; //"Jogador venceu a RODADA"
         }
-        return "Maquina venceu a RODADA";
+        return 2; //"Maquina venceu a RODADA"
     }
 }
