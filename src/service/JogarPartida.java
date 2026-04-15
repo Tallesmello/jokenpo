@@ -1,11 +1,18 @@
+package service;
+
+import model.Jogadas;
+import model.RodadasDoJogo;
+import useCase.MecanicaDoJogo;
+import useCase.MecanicaDoJogoUseCase;
+
 import java.util.List;
 import java.util.Random;
 
-public class JogarPartida {
+public class JogarPartida implements JogarPartidaService {
 
     private List<Jogadas> acoes;
     private Random random = new Random();
-    private MecanicaDoJogo mecanica;
+    private MecanicaDoJogoUseCase mecanica;
 
     public JogarPartida(List<Jogadas> acoes) {
         this.acoes = acoes;

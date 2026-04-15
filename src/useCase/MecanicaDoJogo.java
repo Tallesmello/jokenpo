@@ -1,4 +1,8 @@
-public class MecanicaDoJogo {
+package useCase;
+
+import model.Jogadas;
+
+public class MecanicaDoJogo implements MecanicaDoJogoUseCase {
 
     public int vencedor(Jogadas jogador, Jogadas maquina) {
 

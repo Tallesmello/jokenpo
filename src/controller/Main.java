@@ -1,3 +1,9 @@
+package controller;
+
+import model.ListaDeJogadas;
+import model.RodadasDoJogo;
+import service.JogarPartida;
+
 public class Main {
     public static void main(String[] args) {
 
